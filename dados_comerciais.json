@@ -1,0 +1,80 @@
+{
+    "clientes": {
+        "12345678901": {
+            "tipo": "CPF",
+            "nome": "Joao Claudio",
+            "telefone": "000000000",
+            "inscricao_estadual": "",
+            "endereço": "Rua A",
+            "número": "334",
+            "bairro": "Vila A",
+            "complemento": "Casa 2"
+        },
+        "98765432101": {
+            "tipo": "CPF",
+            "nome": "Roberto Fernandes",
+            "telefone": "000000000",
+            "inscricao_estadual": "",
+            "endereço": "Rua B",
+            "número": "15",
+            "bairro": "Vila A",
+            "complemento": "Depois do posto"
+        }
+    },
+    "produtos": {
+        "01": {
+            "nome": "Cimento",
+            "preço": 32.0,
+            "estoque": 45
+        },
+        "02": {
+            "nome": "Cal",
+            "preço": 25.0,
+            "estoque": 107
+        },
+        "03": {
+            "nome": "Argamassa",
+            "preço": 20.0,
+            "estoque": 93
+        },
+        "04": {
+            "nome": "Barra de Ferro 3/8 12 MT",
+            "preço": 54.9,
+            "estoque": 744
+        }
+    },
+    "vendas": [
+        {
+            "codigo": "1",
+            "cliente": "Joao Claudio",
+            "itens": [
+                {
+                    "codigo_produto": "01",
+                    "produto": "Cimento",
+                    "quantidade": 5,
+                    "subtotal": 160.0
+                },
+                {
+                    "codigo_produto": "02",
+                    "produto": "Cal",
+                    "quantidade": 3,
+                    "subtotal": 75.0
+                }
+            ],
+            "total": 235.0
+        },
+        {
+            "codigo": "2",
+            "cliente": "Roberto Fernandes",
+            "itens": [
+                {
+                    "codigo_produto": "04",
+                    "produto": "Barra de Ferro 3/8 12 MT",
+                    "quantidade": 2,
+                    "subtotal": 109.8
+                }
+            ],
+            "total": 109.8
+        }
+    ]
+}
