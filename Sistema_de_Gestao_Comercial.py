@@ -32,11 +32,22 @@ def salvar_dados(clientes, produtos, vendas):
 
 
 def ordenar_produtos(produtos, criterio):
-    """Ordena os produtos por nome ou preço usando sorted()."""
-    if criterio == "nome":
-        return sorted(produtos.items(), key=lambda item: item[1]["nome"].casefold())
-    else:
-        return sorted(produtos.items(), key=lambda item: item[1]["preço"])
+    """Ordena os produtos manualmente pelo nome ou preço usando Bubble Sort."""
+    lista_produtos = list(produtos.items())
+
+    for i in range(len(lista_produtos)):
+        for j in range(0, len(lista_produtos) - i - 1):
+            if criterio == "nome":
+                valor_atual = lista_produtos[j][1]["nome"].casefold()
+                proximo_valor = lista_produtos[j + 1][1]["nome"].casefold()
+            else:
+                valor_atual = lista_produtos[j][1]["preço"]
+                proximo_valor = lista_produtos[j + 1][1]["preço"]
+
+            if valor_atual > proximo_valor:
+                lista_produtos[j], lista_produtos[j + 1] = lista_produtos[j + 1], lista_produtos[j]
+
+    return lista_produtos
 
 
 def exibir_relatorio_vendas(vendas):
@@ -421,7 +432,7 @@ def main():
 
         elif opcao == "":
             salvar_dados(clientes, produtos, vendas)
-            print("\nSaindo do programa. Dados salvos. Até logo!")
+            print("\nSaindo do programa. Dados salvos.")
             break
         else:
             print("Opção inválida!")
